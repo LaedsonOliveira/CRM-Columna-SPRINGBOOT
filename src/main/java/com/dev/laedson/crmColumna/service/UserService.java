@@ -1,7 +1,9 @@
 package com.dev.laedson.crmColumna.service;
 
+import com.dev.laedson.crmColumna.dto.CreateProjectDto;
 import com.dev.laedson.crmColumna.dto.CreateUserDto;
 import com.dev.laedson.crmColumna.dto.GetUserDto;
+import com.dev.laedson.crmColumna.model.Project;
 import com.dev.laedson.crmColumna.model.User;
 import com.dev.laedson.crmColumna.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -60,4 +62,6 @@ public class UserService {
 
         userRepository.deleteById(user.getUserId());
     }
+
+
 }

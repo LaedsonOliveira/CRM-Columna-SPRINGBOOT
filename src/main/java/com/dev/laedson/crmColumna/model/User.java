@@ -1,7 +1,10 @@
 package com.dev.laedson.crmColumna.model;
 
 import jakarta.persistence.*;
+import org.springframework.scheduling.config.Task;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -27,6 +30,9 @@ public class User {
 
     @Column(name = "role")
     private String role;
+
+    @OneToMany(mappedBy = "collaborator", cascade = CascadeType.ALL)
+    private List<Project> projects = new ArrayList<>();
 
 
     public User() {
