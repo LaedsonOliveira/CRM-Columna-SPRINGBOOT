@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.1
+    container_name: cafeteria-mysql
+    ports:
+      - "3307:3306"   # Host 3307 para evitar conflito
+    environment:
+      MYSQL_DATABASE: cafeteria
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user123
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - cafeteria-network
+
+volumes:
+  db_data:
+
+networks:
+  cafeteria-network:
+    driver: bridge
