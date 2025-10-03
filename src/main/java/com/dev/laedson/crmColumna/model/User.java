@@ -31,6 +31,11 @@ public class User {
     @Column(name = "role")
     private String role;
 
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id")
+    private Enterprise enterprise;
+
+
     @OneToMany(mappedBy = "collaborator", cascade = CascadeType.ALL)
     private List<Project> projects = new ArrayList<>();
 
